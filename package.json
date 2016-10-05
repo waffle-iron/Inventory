@@ -1,0 +1,41 @@
+{
+  "name": "inventory",
+  "version": "1.0.0",
+  "description": "Inventory software for a small shop",
+  "main": "main.js",
+  "scripts": {
+    "build-css": "stylus source/stylesheets/index.styl -o static/css",
+    "watch-css": "stylus source/stylesheets/index.styl -o static/css -w",
+    "clean": "rm -rf static/css && mkdir -p static/css",
+    "build": "npm run clean && npm run build-css",
+    "watch": "npm run clean && npm run watch-css & nodemon server -e js,jade",
+    "start": "electron main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/framirez4/inventory.git"
+  },
+  "author": "Francesc Ramírez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/framirez4/inventory/issues"
+  },
+  "homepage": "https://github.com/framirez4/inventory#readme",
+  "dependencies": {
+    "dotenv": "^2.0.0",
+    "express": "^4.14.0",
+    "morgan": "^1.7.0",
+    "mysql": "^2.11.1",
+    "nib": "^1.1.2",
+    "pug": "^2.0.0-beta6",
+    "stylus": "^0.54.5"
+  },
+  "devDependencies": {
+    "Q": "0.0.1",
+    "asar": "^0.12.3",
+    "electron-connect": "^0.6.0",
+    "electron-prebuilt": "^1.4.2",
+    "fs-jetpack": "^0.9.2",
+    "rcedit": "^0.7.0"
+  }
+}
